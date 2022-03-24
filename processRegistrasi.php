@@ -62,7 +62,9 @@ foreach ($keys as $key => $val) {
     }
 }
 
-if ($_SESSION['password-1'] !== $_SESSION['password-2']) {
+$password1 = $_SESSION['password-1'] ?? false;
+$password2 = $_SESSION['password-2'] ?? false;
+if ($password1 && $password2 && $password1 !== $password2) {
     array_push($missingFields, "<span> Password 1 and password 2 must be the same </span>");
 }
 
