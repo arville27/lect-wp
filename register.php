@@ -1,3 +1,31 @@
+<?php
+
+require_once 'utility/utils.php';
+require_once 'utility/db.php';
+
+if (isset($_POST['register'])) {
+    $missing_fields = validate_regist_data([...$_POST, ...$_FILES]);
+    if (!empty($missing_fields)) {
+        $message = implode('\n', $missing_fields);
+        invoke_js(["alert('$message')"]);
+    } else {
+        // Handle image upload
+        $temp = $_FILES['profilePict']['tmp_name'];
+        $name = $_FILES['profilePict']['name'];
+        if (!is_dir('profilePict')) mkdir('profilePict');
+        move_uploaded_file($temp, "profilePict/$name");
+
+        $status = insert_user([...$_POST, "profilePict" => "profilePict/$name"]);
+        if ($status) {
+            invoke_js(["alert('Register success')", "location.href = 'welcome.php'"]);
+        } else {
+            invoke_js(["alert('Register failed')"]);
+        }
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +39,7 @@
 
 <body class="bg-blue-100 text-center">
     <h1 class="title">Register</h1>
-    <form action="processRegistrasi.php" method="post" enctype="multipart/form-data">
+    <form action="" method="post" enctype="multipart/form-data">
         <div class="flex flex-column form-container">
             <div class="flex row-input-container">
                 <div class="flex input-container">
