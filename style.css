@@ -1,0 +1,80 @@
+:root {
+    --clr-purple: #cad1ff;
+    --clr-blue: #99D6ED;
+    --clr-green: #C6ED99;
+    --clr-orange: #C6ED99;
+    --clr-gray: #E5EDEB;
+    --clr-yellow: #f9ffca;
+}
+
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+/* Utility class */
+.bg-gray {
+    background-color: var(--clr-gray);
+}
+
+.bg-blue {
+    background-color: var(--clr-purple);;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    margin: 5rem;
+}
+
+.btn {
+    border: none;
+    cursor: pointer;
+    padding: 1em;
+}
+
+/* Welcome Page */
+.title {
+    margin: 2rem;
+}
+
+.btn-container {
+    margin: 3rem;
+    gap: 3rem;
+}
+
+.login-btn {
+    background-color: var(--clr-blue);
+    font-size: 2rem;
+}
+
+.register-btn {
+    background-color: var(--clr-green);
+    font-size: 2rem;
+}
+
+
+
+
