@@ -144,7 +144,7 @@ textarea {
     background-color: var(--clr-green);
 }
 
-/* Home */
+/* Home and profile*/
 nav {
     background-color: var(--clr-yellow);
     justify-content: space-between;
@@ -161,7 +161,35 @@ nav {
     margin-left: 5rem;
 }
 
+.message-container > span {
+    font-size: 2rem;
+}
+
 .message-container {
     padding-block: 10rem;
-    font-size: 2rem;
+}
+
+/* Profile */
+.profile-parent-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 2rem;
+    column-gap: 8rem;
+    margin: 2rem 8rem;
+    font-size: 1.3rem;
+}
+
+.profile-field-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
+}
+
+.profile-field-container *:nth-child(2) {
+    font-weight: bold;
+}
+
+.pict {
+    width: 10rem;
+    height: 10rem;
 }
