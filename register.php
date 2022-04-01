@@ -84,7 +84,7 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-center">
+        <div class="flex flex-center register-btn-container">
             <a href="welcome.php">
                 <input class="btn back-btn" type="button" value="Kembali">
             </a>

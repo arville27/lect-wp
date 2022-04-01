@@ -37,7 +37,15 @@ textarea {
 }
 
 .bg-blue-200 {
-    background-color: var(--clr-purple);
+    background-color: var(--clr-blue-200);
+}
+
+.bg-purple {
+    background-color: var(--clr-blue-200);
+}
+
+.bg-yellow {
+    background-color: var(--clr-yellow);
 }
 
 .text-center {
@@ -73,12 +81,12 @@ textarea {
     margin: 5rem;
 }
 
-.login-btn {
+.tologin-btn {
     background-color: var(--clr-blue-200);
     font-size: 2rem;
 }
 
-.register-btn {
+.toregister-btn {
     background-color: var(--clr-green);
     font-size: 2rem;
 }
@@ -105,14 +113,33 @@ textarea {
     text-align: left;
 }
 
-.back-btn {
-    padding-inline: 1.4em;
-    background-color: var(--clr-orange);
+.register-btn-container * {
     font-size: 1rem;
+    padding-inline: 1.4em;
+}
+
+.back-btn {
+    background-color: var(--clr-orange);
 }
 
 .submit-btn {
-    padding-inline: 1.4em;
     background-color: var(--clr-green);
-    font-size: 1rem;
+}
+
+/* Login page */
+.form-element {
+    padding: 2rem 5rem;
+}
+
+.login-container {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.login-btn-container * {
+    font-size: 1.2rem !important;
+}
+
+.userlogin-btn {
+    background-color: var(--clr-green);
 }

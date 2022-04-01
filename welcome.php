@@ -15,12 +15,12 @@
         <h1 class="title">Selamat Datang di Aplikasi Pengelolaan Keuangan</h1>
         <div class="flex flex-center">
             <a href="login.php">
-                <button id="login" class="btn login-btn">
+                <button id="login" class="btn tologin-btn">
                     Login
                 </button>
             </a>
             <a href="register.php">
-                <button id="login" class="btn register-btn">
+                <button id="login" class="btn toregister-btn">
                     Register
                 </button>
             </a>
