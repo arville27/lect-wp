@@ -1,12 +1,12 @@
 :root {
     --clr-purple: #cad1ff;
-    --clr-blue: #99D6ED;
-    --clr-green: #C6ED99;
-    --clr-orange: #C6ED99;
-    --clr-gray: #E5EDEB;
+    --clr-blue-100: #c2f0f7;
+    --clr-blue-200: #99d6ed;
+    --clr-green: #c6ed99;
+    --clr-orange: #fdd7ac;
+    --clr-gray: #e5edeb;
     --clr-yellow: #f9ffca;
 }
-
 
 *,
 *::after,
@@ -21,14 +21,23 @@ a {
     color: black;
 }
 
+input,
+textarea {
+    border: none;
+    resize: none;
+}
 
 /* Utility class */
 .bg-gray {
     background-color: var(--clr-gray);
 }
 
-.bg-blue {
-    background-color: var(--clr-purple);;
+.bg-blue-100 {
+    background-color: var(--clr-blue-100);
+}
+
+.bg-blue-200 {
+    background-color: var(--clr-purple);
 }
 
 .text-center {
@@ -44,9 +53,8 @@ a {
     align-items: center;
 }
 
-.container {
+.flex {
     display: flex;
-    margin: 5rem;
 }
 
 .btn {
@@ -56,6 +64,10 @@ a {
 }
 
 /* Welcome Page */
+.content-container {
+    margin: 5rem;
+}
+
 .title {
     margin: 2rem;
 }
@@ -66,7 +78,7 @@ a {
 }
 
 .login-btn {
-    background-color: var(--clr-blue);
+    background-color: var(--clr-blue-200);
     font-size: 2rem;
 }
 
@@ -74,7 +86,3 @@ a {
     background-color: var(--clr-green);
     font-size: 2rem;
 }
-
-
-
-
