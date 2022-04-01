@@ -12,8 +12,8 @@
 <body class="bg-gray">
     <div class="flex flex-column flex-center content-container">
         <h2 class="title">Aplikasi pengelolaan Keungaan</h2>
-        <h1>Selamat Datang di Aplikasi Pengelolaan Keuangan</h1>
-        <div class="flex flex-center btn-container">
+        <h1 class="title">Selamat Datang di Aplikasi Pengelolaan Keuangan</h1>
+        <div class="flex flex-center">
             <a href="login.php">
                 <button id="login" class="btn login-btn">
                     Login
