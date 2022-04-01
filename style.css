@@ -41,7 +41,7 @@ textarea {
 }
 
 .bg-purple {
-    background-color: var(--clr-blue-200);
+    background-color: var(--clr-purple);
 }
 
 .bg-yellow {
@@ -142,4 +142,26 @@ textarea {
 
 .userlogin-btn {
     background-color: var(--clr-green);
+}
+
+/* Home */
+nav {
+    background-color: var(--clr-yellow);
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    font-size: 1.3rem;
+}
+
+.current {
+    font-weight: bold;
+}
+
+.logout {
+    margin-left: 5rem;
+}
+
+.message-container {
+    padding-block: 10rem;
+    font-size: 2rem;
 }
