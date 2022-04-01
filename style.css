@@ -55,6 +55,7 @@ textarea {
 
 .flex {
     display: flex;
+    gap: 2rem;
 }
 
 .btn {
@@ -63,18 +64,13 @@ textarea {
     padding: 1em;
 }
 
-/* Welcome Page */
-.content-container {
-    margin: 5rem;
-}
-
 .title {
     margin: 2rem;
 }
 
-.btn-container {
-    margin: 3rem;
-    gap: 3rem;
+/* Welcome Page */
+.content-container {
+    margin: 5rem;
 }
 
 .login-btn {
@@ -85,4 +81,38 @@ textarea {
 .register-btn {
     background-color: var(--clr-green);
     font-size: 2rem;
+}
+
+/* Register page */
+.form-container {
+    gap: 1.5rem;
+    margin: 2rem 8rem;
+}
+
+.row-input-container {
+    gap: 15rem;
+}
+
+.input-container {
+    flex: 1;
+}
+
+.input-container * {
+    flex: 1;
+}
+
+.input-container label {
+    text-align: left;
+}
+
+.back-btn {
+    padding-inline: 1.4em;
+    background-color: var(--clr-orange);
+    font-size: 1rem;
+}
+
+.submit-btn {
+    padding-inline: 1.4em;
+    background-color: var(--clr-green);
+    font-size: 1rem;
 }
