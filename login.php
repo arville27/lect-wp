@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_SESSION['username'])) {
         invoke_js(["alert('Password is must not empty')"]);
     } else {
         $user = get_user($username);
-        if (!$user) invoke_js(["alert('This user doesn\'t exists')"]);
+        if (!$user) invoke_js(["alert('Incorrect password or username')"]);
         else if ($user['password'] == $password) {
             $_SESSION['username'] = $username;
             $_SESSION['full_name'] = implode(' ', [$user['front_name'], $user['middle_name'], $user['last_name']]);
