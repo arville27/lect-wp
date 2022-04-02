@@ -15,7 +15,7 @@
         <div class="flex">
             <a class="current" href="home.php">Home</a>
             <a href="profile.php">Profile</a>
-            <a class="logout" href="processLogout.php">Logout</a>
+            <a class="logout" href="logout.php">Logout</a>
         </div>
     </nav>
     <div class="flex flex-center message-container">
