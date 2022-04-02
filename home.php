@@ -21,7 +21,7 @@
     <div class="flex flex-center message-container">
         <?php
         session_start();
-        $name = implode(' ', [$_SESSION['frontName'], $_SESSION['middleName'], $_SESSION['lastName']]);
+        $name = $_SESSION['full_name'];
         echo "<span> Halo <strong>$name</strong>, Selamat datang di Aplikasi Pengelolaan Keuangaan </span>"
         ?>
     </div>

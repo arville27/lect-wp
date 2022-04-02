@@ -1,3 +1,31 @@
+<?php
+
+require_once 'utility/utils.php';
+require_once 'utility/db.php';
+
+session_start();
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_SESSION['username'])) {
+    header('location: home.php');
+} else if (isset($_POST['login'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    if (empty($username)) {
+        invoke_js(["alert('Please enter your username')"]);
+    } else if (empty($password)) {
+        invoke_js(["alert('Password is must not empty')"]);
+    } else {
+        $user = get_user($username);
+        if (!$user) invoke_js(["alert('This user doesn\'t exists')"]);
+        else if ($user['password'] == $password) {
+            $_SESSION['username'] = $username;
+            $_SESSION['full_name'] = implode(' ', [$user['front_name'], $user['middle_name'], $user['last_name']]);
+            header('location: home.php');
+        }
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +40,7 @@
 <body class="bg-yellow text-center">
     <h2 class="title">Login</h2>
     <div class="flex flex-column flex-center">
-        <form class="form-element bg-blue-100" action="processLogin.php" method="post">
+        <form class="form-element bg-blue-100" action="" method="post">
             <div class="flex flex-column flex-center login-container">
                 <div class="flex">
                     <label for="username">Username</label>
@@ -25,7 +53,7 @@
             </div>
             <div class="flex flex-center login-btn-container">
                 <a href="login.php">
-                    <input type="submit" value="Login" class="btn userlogin-btn">
+                    <input type="submit" value="Login" name="login" class="btn userlogin-btn">
                 </a>
                 <a href="welcome.php">
                     <input type="button" value="Kembali" class="btn back-btn">
