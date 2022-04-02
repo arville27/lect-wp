@@ -5,6 +5,8 @@ if (!isset($_SESSION['username'])) {
     header('location: welcome.php');
 }
 
+$name = $_SESSION['full_name'];
+
 ?>
 
 <!DOCTYPE html>
@@ -28,11 +30,7 @@ if (!isset($_SESSION['username'])) {
         </div>
     </nav>
     <div class="flex flex-center message-container">
-        <?php
-        session_start();
-        $name = $_SESSION['full_name'];
-        echo "<span> Halo <strong>$name</strong>, Selamat datang di Aplikasi Pengelolaan Keuangaan </span>"
-        ?>
+        <span> Halo <strong><?= $name ?></strong>, Selamat datang di Aplikasi Pengelolaan Keuangaan </span>
     </div>
 </body>
 
