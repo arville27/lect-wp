@@ -1,0 +1,3 @@
+CREATE DATABASE `aplikasi_pengelolaan_uang`;
+USE `aplikasi_pengelolaan_uang`;
+CREATE TABLE `aplikasi_pengelolaan_uang`.`users` ( `id` INT NOT NULL AUTO_INCREMENT , `front_name` VARCHAR(128) NOT NULL , `middle_name` VARCHAR(128) NOT NULL , `last_name` VARCHAR(128) NOT NULL , `birth_place` VARCHAR(128) NOT NULL , `birth_date` DATE NOT NULL , `NIK` VARCHAR(32) NOT NULL , `nationality` VARCHAR(32) NOT NULL , `email` VARCHAR(128) NOT NULL , `phone_number` CHAR(14) NOT NULL , `address` TEXT NOT NULL , `postal_code` CHAR(8) NOT NULL , `username` VARCHAR(128) NOT NULL , `password` VARCHAR(128) NOT NULL , `profile_pict` TEXT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
