@@ -6,8 +6,6 @@ require_once 'utility/db.php';
 session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_SESSION['username'])) {
     header('location: home.php');
-} else if (!isset($_SESSION['username'])) {
-    header('location: welcome.php');
 } else if (isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
