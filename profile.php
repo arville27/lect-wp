@@ -4,9 +4,15 @@ require_once 'utility/utils.php';
 require_once 'utility/db.php';
 
 session_start();
-$user = get_user($_SESSION['username']);
-$filtered_keys = get_filter_profile_keys();
-$profile_pict = $user['profile_pict'];
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_SESSION['username'])) {
+    header('location: home.php');
+} else if (!isset($_SESSION['username'])) {
+    header('location: welcome.php');
+} else {
+    $user = get_user($_SESSION['username']);
+    $filtered_keys = get_filter_profile_keys();
+    $profile_pict = $user['profile_pict'];
+}
 
 ?>
 

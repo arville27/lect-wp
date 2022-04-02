@@ -4,8 +4,13 @@ require_once 'utility/utils.php';
 require_once 'utility/db.php';
 
 session_start();
-$user = get_user($_SESSION['username']);
-if (isset($_POST['save'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_SESSION['username'])) {
+    header('location: home.php');
+} else if (!isset($_SESSION['username'])) {
+    header('location: welcome.php');
+} else if (isset($_POST['save'])) {
+    $user = get_user($_SESSION['username']);
+
     // Handle image upload
     if ($_FILES['profile_pict']['error'] === 0) {
         $temp = $_FILES['profile_pict']['tmp_name'];
