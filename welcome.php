@@ -1,3 +1,12 @@
+<?php
+
+session_start();
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_SESSION['username'])) {
+    header('location: home.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
