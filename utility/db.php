@@ -15,20 +15,20 @@ function insert_user($user) {
     $statement = $conn->prepare("INSERT INTO users VALUES ('', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
     $statement->bind_param(
         'ssssssssssssss',
-        $user['frontName'],
-        $user['middleName'],
-        $user['lastName'],
-        $user['birthLocation'],
-        $user['birthDate'],
-        $user['nik'],
-        $user['wargaNegara'],
+        $user['front_name'],
+        $user['middle_name'],
+        $user['last_name'],
+        $user['birth_location'],
+        $user['birth_date'],
+        $user['NIK'],
+        $user['nationality'],
         $user['email'],
-        $user['phone'],
+        $user['phone_number'],
         $user['address'],
-        $user['postalCode'],
+        $user['postal_code'],
         $username,
         $user['password-1'],
-        $user['profilePict'],
+        $user['profile_pict'],
     );
     $status = $statement->execute();
     $statement->close();

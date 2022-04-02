@@ -1,22 +1,21 @@
 <?php
 
 $keys = [
-    'frontName' => 'Nama depan',
-    'middleName' => 'Nama tengah',
-    'lastName' => 'Nama belakang',
-    'birthLocation' => 'Tempat Lahir',
-    'birthDate' => 'Tanggal lahir',
-    'nik' => 'NIK',
-    'wargaNegara' => 'Warga Negara',
+    'front_name' => 'Nama depan',
+    'middle_name' => 'Nama tengah',
+    'last_name' => 'Nama belakang',
+    'birth_location' => 'Tempat Lahir',
+    'birth_date' => 'Tanggal lahir',
+    'NIK' => 'NIK',
+    'nationality' => 'Warga Negara',
     'email' => 'Email',
-    'phone' => 'No HP',
+    'phone_number' => 'No HP',
     'address' => 'Alamat',
-    'postalCode' => 'Kode Pos',
+    'postal_code' => 'Kode Pos',
     'username' => 'Username',
     'password-1' => 'Password 1',
     'password-2' => 'Password 2'
 ];
-
 
 function validate_regist_data($data) {
     global $keys;
@@ -34,7 +33,7 @@ function validate_regist_data($data) {
         array_push($missing_fields, "Password 1 and password 2 must be the same");
     }
 
-    if ($data['profilePict']['error'] !== 0) {
+    if ($data['profile_pict']['error'] !== 0) {
         array_push($missing_fields, "Profile picture is required");
     }
 

@@ -10,12 +10,12 @@ if (isset($_POST['register'])) {
         invoke_js(["alert('$message')"]);
     } else {
         // Handle image upload
-        $temp = $_FILES['profilePict']['tmp_name'];
-        $name = $_FILES['profilePict']['name'];
-        if (!is_dir('profilePict')) mkdir('profilePict');
-        move_uploaded_file($temp, "profilePict/$name");
+        $temp = $_FILES['profile_pict']['tmp_name'];
+        $name = $_FILES['profile_pict']['name'];
+        if (!is_dir('profile_pict')) mkdir('profile_pict');
+        move_uploaded_file($temp, "profile_pict/$name");
 
-        $status = insert_user([...$_POST, "profilePict" => "profilePict/$name"]);
+        $status = insert_user([...$_POST, "profile_pict" => "profile_pict/$name"]);
         if ($status) {
             invoke_js(["alert('Register success')", "location.href = 'welcome.php'"]);
         } else {
@@ -43,44 +43,44 @@ if (isset($_POST['register'])) {
         <div class="flex flex-column form-container">
             <div class="flex row-input-container">
                 <div class="flex input-container">
-                    <label for="frontName">Nama depan</label>
-                    <input type="text" name="frontName" id="frontName">
+                    <label for="front_name">Nama depan</label>
+                    <input type="text" name="front_name" id="front_name">
                 </div>
                 <div class="flex input-container">
-                    <label for="middleName">Nama tengah</label>
-                    <input type="text" name="middleName" id="middleName">
+                    <label for="middle_name">Nama tengah</label>
+                    <input type="text" name="middle_name" id="middle_name">
                 </div>
                 <div class="flex input-container">
-                    <label for="lastName">Nama belakang</label>
-                    <input type="text" name="lastName" id="lastName">
-                </div>
-            </div>
-            <div class="flex row-input-container">
-                <div class="flex input-container">
-                    <label for="birthLocation">Tempat Lahir</label>
-                    <input type="text" name="birthLocation" id="birthLocation">
-                </div>
-                <div class="flex input-container">
-                    <label for="birthDate">Tanggal lahir</label>
-                    <input type="date" name="birthDate" id="birthDate">
-                </div>
-                <div class="flex input-container">
-                    <label for="nik">NIK</label>
-                    <input type="number" name="nik" id="nik">
+                    <label for="last_name">Nama belakang</label>
+                    <input type="text" name="last_name" id="last_name">
                 </div>
             </div>
             <div class="flex row-input-container">
                 <div class="flex input-container">
-                    <label for="wargaNegara">Warga Negara</label>
-                    <input type="text" name="wargaNegara" id="wargaNegara">
+                    <label for="birth_location">Tempat Lahir</label>
+                    <input type="text" name="birth_location" id="birth_location">
+                </div>
+                <div class="flex input-container">
+                    <label for="birth_date">Tanggal lahir</label>
+                    <input type="date" name="birth_date" id="birth_date">
+                </div>
+                <div class="flex input-container">
+                    <label for="NIK">NIK</label>
+                    <input type="number" name="NIK" id="NIK">
+                </div>
+            </div>
+            <div class="flex row-input-container">
+                <div class="flex input-container">
+                    <label for="nationality">Warga Negara</label>
+                    <input type="text" name="nationality" id="nationality">
                 </div>
                 <div class="flex input-container">
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email">
                 </div>
                 <div class="flex input-container">
-                    <label for="phone">No HP</label>
-                    <input type="phone" name="phone" id="phone">
+                    <label for="phone_number">No HP</label>
+                    <input type="phone" name="phone_number" id="phone_number">
                 </div>
             </div>
             <div class="flex row-input-container">
@@ -89,12 +89,12 @@ if (isset($_POST['register'])) {
                     <textarea name="address" cols="21" rows="2" id="address"></textarea>
                 </div>
                 <div class="flex input-container">
-                    <label for="postalCode">Kode Pos</label>
-                    <input type="number" name="postalCode" id="postalCode">
+                    <label for="postal_code">Kode Pos</label>
+                    <input type="number" name="postal_code" id="postal_code">
                 </div>
                 <div class="flex input-container">
-                    <label for="profilePict">Foto Profil</label>
-                    <input type="file" name="profilePict" id="profilePict">
+                    <label for="profile_pict">Foto Profil</label>
+                    <input type="file" name="profile_pict" id="profile_pict">
                 </div>
             </div>
             <div class="flex row-input-container">
