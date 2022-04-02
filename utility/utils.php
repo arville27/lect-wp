@@ -40,6 +40,12 @@ function validate_regist_data($data) {
     return $missing_fields;
 }
 
+function get_filter_profile_keys() {
+    global $keys;
+    $profile_arr = array_slice($keys, 0, count($keys) - 3);
+    return $profile_arr;
+}
+
 function invoke_js($array_cmd) {
     $cmd = implode("\n", $array_cmd);
     echo "

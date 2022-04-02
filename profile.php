@@ -1,3 +1,15 @@
+<?php
+
+require_once 'utility/utils.php';
+require_once 'utility/db.php';
+
+session_start();
+$user = get_user($_SESSION['username']);
+$filtered_keys = get_filter_profile_keys();
+$profile_pict = $user['profile_pict'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,30 +33,13 @@
     <div class="flex flex-column flex-center message-container">
         <h1>Profil pribadi</h1>
         <div class="profile-parent-container">
-            <?php
-            session_start();
-            $keys = [
-                'frontName' => 'Nama depan',
-                'middleName' => 'Nama tengah',
-                'lastName' => 'Nama belakang',
-                'birthLocation' => 'Tempat Lahir',
-                'birthDate' => 'Tanggal lahir',
-                'nik' => 'NIK',
-                'wargaNegara' => 'Warga Negara',
-                'email' => 'Email',
-                'phone' => 'No HP',
-                'address' => 'Alamat',
-                'postalCode' => 'Kode Pos',
-            ];
-            $profilePict = $_SESSION['profilePict'];
-            ?>
-            <?php foreach ($keys as $key => $value) : ?>
+            <?php foreach ($filtered_keys as $key => $value) : ?>
                 <div class="profile-field-container">
                     <span>
                         <?= "$value" ?>
                     </span>
                     <span>
-                        <?= "$_SESSION[$key]" ?>
+                        <?= "$user[$key]" ?>
                     </span>
                 </div>
             <?php endforeach ?>
@@ -52,7 +47,7 @@
                 <span>
                     Foto Profil
                 </span>
-                <img class="pict" src="<?= "$profilePict" ?>" alt="">
+                <img class="pict" src="<?= "$profile_pict" ?>" alt="">
             </div>
         </div>
     </div>
