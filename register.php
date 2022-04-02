@@ -57,8 +57,8 @@ if (isset($_POST['register'])) {
             </div>
             <div class="flex row-input-container">
                 <div class="flex input-container">
-                    <label for="birth_location">Tempat Lahir</label>
-                    <input type="text" name="birth_location" id="birth_location">
+                    <label for="birth_place">Tempat Lahir</label>
+                    <input type="text" name="birth_place" id="birth_place">
                 </div>
                 <div class="flex input-container">
                     <label for="birth_date">Tanggal lahir</label>

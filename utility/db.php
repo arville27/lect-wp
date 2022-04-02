@@ -18,7 +18,7 @@ function insert_user($user) {
         $user['front_name'],
         $user['middle_name'],
         $user['last_name'],
-        $user['birth_location'],
+        $user['birth_place'],
         $user['birth_date'],
         $user['NIK'],
         $user['nationality'],

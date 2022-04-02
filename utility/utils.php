@@ -4,7 +4,7 @@ $keys = [
     'front_name' => 'Nama depan',
     'middle_name' => 'Nama tengah',
     'last_name' => 'Nama belakang',
-    'birth_location' => 'Tempat Lahir',
+    'birth_place' => 'Tempat Lahir',
     'birth_date' => 'Tanggal lahir',
     'NIK' => 'NIK',
     'nationality' => 'Warga Negara',
@@ -39,7 +39,6 @@ function validate_regist_data($data) {
 
     return $missing_fields;
 }
-
 
 function invoke_js($array_cmd) {
     $cmd = implode("\n", $array_cmd);
