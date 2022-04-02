@@ -35,6 +35,44 @@ function insert_user($user) {
     return $status;
 }
 
+function update_user($user, $target) {
+    global $conn;
+
+    $statement = $conn->prepare("UPDATE users SET 
+        front_name = ?,
+        middle_name = ?,
+        last_name = ?,
+        birth_place = ?,
+        birth_date = ?,
+        NIK = ?,
+        nationality = ?,
+        email = ?,
+        phone_number = ?,
+        `address` = ?,
+        postal_code = ?
+        WHERE id = ?");
+
+    $statement->bind_param(
+        'ssssssssssss',
+        $user['front_name'],
+        $user['middle_name'],
+        $user['last_name'],
+        $user['birth_place'],
+        $user['birth_date'],
+        $user['NIK'],
+        $user['nationality'],
+        $user['email'],
+        $user['phone_number'],
+        $user['address'],
+        $user['postal_code'],
+        $target
+    );
+
+    $status = $statement->execute();
+    $statement->close();
+    return $status;
+}
+
 function get_user($username = '') {
     global $conn;
 

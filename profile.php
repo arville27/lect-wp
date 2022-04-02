@@ -50,6 +50,7 @@ $profile_pict = $user['profile_pict'];
                 <img class="pict" src="<?= "$profile_pict" ?>" alt="">
             </div>
         </div>
+        <a href="edit_profile.php" class="edit-profile-btn">Edit profile</a>
     </div>
 </body>
 
